@@ -1,10 +1,14 @@
 import interfaces.IUniversalRMIRegistry;
 import rmiregistry.UniversalRMIRegistry;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
 import java.net.MalformedURLException;
 import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
+import java.util.Hashtable;
 
 /**
  * Created by dallagnol on 20/05/16.
@@ -12,10 +16,10 @@ import java.rmi.registry.LocateRegistry;
 public class Launcher {
     public static void main(String[] args) {
         try {
-            LocateRegistry.getRegistry(4242);
+            LocateRegistry.getRegistry(1098);
             IUniversalRMIRegistry registry = new UniversalRMIRegistry();
 
-            Naming.rebind("rmi://localhost:4242/universalrmiregistry", registry);
+            Naming.rebind("rmi://localhost:1098/universalrmiregistry", registry);
         } catch (RemoteException e) {
             System.err.println("remote exception");
             e.printStackTrace();

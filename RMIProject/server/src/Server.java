@@ -1,12 +1,12 @@
+import api.Donnee;
+import api.IUniversalRMIRegistry;
+import api.Service;
 import data.Resultat;
 import data.ServiceDistant;
-import interfaces.Distante;
-import interfaces.IUniversalRMIRegistry;
 
 import java.net.MalformedURLException;
 import java.rmi.Naming;
 import java.rmi.NotBoundException;
-import java.rmi.RMISecurityManager;
 import java.rmi.RemoteException;
 
 /**
@@ -24,9 +24,9 @@ public class Server {
             IUniversalRMIRegistry reg = (IUniversalRMIRegistry) Naming.lookup("rmi://localhost:1098/universalrmiregistry");
 
             //put a data and a service into the registry
-            Resultat result = new Resultat(21);
+            Donnee result = new Resultat(21);
             reg.put("resultat", result);
-            Distante service = new ServiceDistant();
+            Service service = new ServiceDistant();
             reg.put("Service", service);
         } catch (RemoteException | MalformedURLException | NotBoundException e) {
             e.printStackTrace();

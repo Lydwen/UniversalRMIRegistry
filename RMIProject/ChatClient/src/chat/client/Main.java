@@ -1,7 +1,7 @@
 package chat.client;
 
+import api.IUniversalRMIRegistry;
 import interfaces.IChatService;
-import interfaces.IUniversalRMIRegistry;
 
 import javax.jms.*;
 import javax.naming.Context;

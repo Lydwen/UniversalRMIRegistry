@@ -1,6 +1,6 @@
 package rmiregistry;
 
-import interfaces.IUniversalRMIRegistry;
+import api.IUniversalRMIRegistry;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;

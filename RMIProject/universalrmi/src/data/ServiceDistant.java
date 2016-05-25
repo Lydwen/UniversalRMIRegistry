@@ -1,22 +1,21 @@
 package data;
 
-import interfaces.Distante;
+import api.Donnee;
+import api.Service;
 
-import java.io.Serializable;
 import java.rmi.RemoteException;
 
 /**
  * Created by user on 22/05/16.
  */
-public class ServiceDistant implements Distante, Serializable {
+public class ServiceDistant implements Service {
     @Override
-    public void echo() throws RemoteException {
-        System.out.println("Hi, I'm "+this.getClass()+" and I'm being created");
+    public String getInfo() throws RemoteException {
+        return "I'm a ServiceDistant and I return a Resultat object";
     }
 
     @Override
-    public Resultat doSth(int param) throws RemoteException {
-        System.out.println("Hi, I'm "+this.getClass()+" and I'm doing something");
-        return new Resultat(param);
+    public Donnee accesService() throws RemoteException {
+        return new Resultat(12);
     }
 }

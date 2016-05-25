@@ -1,9 +1,9 @@
 package client;
 
+import api.Donnee;
+import api.IUniversalRMIRegistry;
+import api.Service;
 import data.Resultat;
-import interfaces.Distante;
-import interfaces.IUniversalRMIRegistry;
-
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -29,9 +29,10 @@ public class Client {
             IUniversalRMIRegistry reg = (IUniversalRMIRegistry) Naming.lookup("rmi://localhost:1098/universalrmiregistry");
 
             //get a service from the registry
-            Distante service = (Distante)reg.get("Service");
-            service.doSth(21);
-            service.echo();
+            Service service = (Service) reg.get("Service");
+            System.out.println(service.getInfo());
+            Donnee result = service.accesService();
+            System.out.println(result);
 
             //get a data from the registry
             Resultat res = (Resultat) reg.get("resultat");

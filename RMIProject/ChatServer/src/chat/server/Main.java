@@ -1,6 +1,7 @@
 package chat.server;
 
-import interfaces.IUniversalRMIRegistry;
+
+import api.IUniversalRMIRegistry;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;

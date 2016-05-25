@@ -1,4 +1,4 @@
-import interfaces.IUniversalRMIRegistry;
+import api.IUniversalRMIRegistry;
 import rmiregistry.UniversalRMIRegistry;
 
 import javax.naming.Context;

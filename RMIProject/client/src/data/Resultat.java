@@ -1,11 +1,11 @@
 package data;
 
-import java.io.Serializable;
+import api.Donnee;
 
 /**
  * Created by dallagnol on 04/04/16.
  */
-public class Resultat implements Serializable{
+public class Resultat extends Donnee{
     private int anInt;
 
     public Resultat(){
